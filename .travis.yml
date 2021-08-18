@@ -9,11 +9,16 @@ install:
   - pip install codecov
 
 script:
-  - coverage run 
+  - coverage run app.py
 #   -m pytest discover
   - coverage report
 
 after_success:
+  # Install deepsource CLI
+  - curl https://deepsource.io/cli | sh
+
+  # Report coverage artifact to 'test-coverage' analyzer
+  - ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
   - codecov
   - bash <(curl -s https://codecov.io/bash)
 
