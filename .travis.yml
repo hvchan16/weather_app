@@ -8,6 +8,7 @@ python:
 cache: pip
 
 install:
+  - pip install coverage
   - pip install -r requirements.txt
   - pip install codecov
 
@@ -18,6 +19,7 @@ script:
 
 after_success:
   - codecov
+  - bash <(curl -s https://codecov.io/bash)
 
 
 # deploy:
