@@ -11,13 +11,9 @@ install:
   - pip install codecov
 
 script:
-  - pytest
-  - python app.py
-  - python -m unittest discover
-  - behave
-  - coverage erase
-  - coverage run app.py && coverage html
-  - pylint --output-format=text app.py
+  - coverage run -m pytest
+  - coverage report
+  - codecov
 
 after_success:
   - codecov
