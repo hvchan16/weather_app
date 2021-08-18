@@ -9,7 +9,8 @@ install:
   - pip install codecov
 
 script:
-#   - coverage run -m pytest discover
+  - coverage run 
+#   -m pytest discover
   - coverage report
 
 after_success:
