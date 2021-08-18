@@ -11,9 +11,9 @@ install:
   - pip install pytest
 
 script:
-  - pytest
-  - coverage report
+  - coverage run -m pytest
   - coverage run app.py && coverage html
+  - coverage report
 
 after_success:
   - codecov
