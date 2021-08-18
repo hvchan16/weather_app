@@ -8,15 +8,14 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install codecov
-  - pip install pytest
 
 script:
   - coverage run -m pytest
-  - coverage run app.py && coverage html
   - coverage report
 
 after_success:
   - codecov
+
 
 # deploy:
 #   - provider: heroku
