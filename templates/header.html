@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Weather Application</title>
+        <!-- MDB icon -->
+        <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"/>
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
+        <!-- Dark MDB theme -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/mdb.dark.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/mdb.dark.min.css.map') }}" />
+        <!-- Regular MDB theme -->
+        <!-- <link rel="stylesheet" href="css/mdb.min.css" /> -->
+        <style>
+        @import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
+        body {
+        background-color: #222;
+        }
+        #currentTime {
+        font-size: 10em;
+        text-align: center;
+        font-family: 'Oswald';
+        font-weight: 300;
+        color: #000000;
+        margin: 100px auto;
+        }
+        .setblur {
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        }
+        </style>
+        <style type="text/css">
+        .map-container-section {
+        overflow:hidden;
+        /* padding-bottom:56.25%; */
+        position:relative;
+        height:0;
+        }
+        .map-container-section iframe {
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+        }
+        .intro-2 {
+        background: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img%20(11).jpg")no-repeat center center;
+        background-size: cover;
+        }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <small>Weather</small>
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" id="home"  name="home" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link" id="weather" name="weather" href="{{ url_for('weather') }}">Weather</a>
+                        <a class="nav-link" id="about" name="about" href="{{ url_for('about') }}">About Us</a>
+                        <a class="nav-link" id="contact" name="contact" href="{{ url_for('contact') }}">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {{ active_page }}

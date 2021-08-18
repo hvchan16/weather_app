@@ -1,0 +1,109 @@
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="#">Lambton.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- MDB -->
+<script type="text/javascript" src="{{ url_for('static',filename='js/mdb.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/mdb.min.js.map') }}"></script>
+<!-- Custom scripts -->
+<script type="text/javascript">
+var active_page = '{{ active_page }}';
+var elements = document.getElementsByClassName("nav-link");
+var names = '';
+for(var i = 0; i < elements.length; i++) {
+name = elements[i].name;
+if (active_page == name){
+document.getElementById(name).classList.add('active');
+}
+}
+</script>
+<!-- Clock Script -->
+<script type="text/javascript">
+window.onload = function() {
+clock();
+function clock() {
+var now = new Date();
+var date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate();
+var TwentyFourHour = now.getHours();
+var hour = now.getHours();
+var min = now.getMinutes();
+var sec = now.getSeconds();
+var mid = 'pm';
+if (min < 10) {
+min = "0" + min;
+}
+if (hour > 12) {
+hour = hour - 12;
+}
+if(hour==0){
+hour=12;
+}
+if(TwentyFourHour < 12) {
+mid = 'am';
+}
+if (active_page == 'home') {
+document.getElementById('currentTime').innerHTML =   date+' '+hour+':'+min+':'+sec +' '+mid ;
+setTimeout(clock, 1000);
+}
+}
+}
+</script>
+<script type="text/javascript">
+if (active_page == 'contact') {
+new WOW().init();
+function init_map() {
+var var_location = new google.maps.LatLng(40.725118, -73.997699);
+var var_mapoptions = {
+center: var_location,
+zoom: 14
+};
+var var_marker = new google.maps.Marker({
+position: var_location,
+map: var_map,
+title: "New York"
+});
+var var_map = new google.maps.Map(document.getElementById("map-container"),
+var_mapoptions);
+var_marker.setMap(var_map);
+}
+google.maps.event.addDomListener(window, 'load', init_map);
+}
+</script>
+</body>
+</html>

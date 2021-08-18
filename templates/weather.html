@@ -1,0 +1,60 @@
+<!-- Nav Bar -->
+{% include "header.html"%}
+{% set active_page = "weather" %}
+<!-- End Nav Bar -->
+<!-- Main Content-->
+<div class="container pt-5 intro-2">
+  <!--Section: Cards-->
+  <section>
+    <div class="text-center">
+      <h4 style="color: #2b2d2f"><strong>WEATHER</strong></h4>
+    </div>
+    <div class="row pb-3">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-3 mb-3">
+      </div>
+      <div class="col-lg-6 col-md-6 mb-6">
+        <div class="card">
+          <div class="card-body">
+            <!-- <h5 class="card-title">Get Weather for City</h5> -->
+            <form id="weatherForm" action="{{ url_for('results') }}" method="post">
+              <label class="card-text">Enter Location</label>
+              <input id="weatherInput" type="text" name="zipCode" class="form-control" placeholder="Enter City"><br>
+              <input id="weatherSubmit" type="submit" value="Submit" class="btn btn-primary form-control">
+            </form>
+          </div>
+        </div>
+        {% if flag == "wflag" %}
+          {% block content %}
+            <br>
+            <div class="card">
+              <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(55).jpg" class="card-img" alt="..."/> -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="card-title">Weather Results</h4>
+                    <label class="card-text">Location: {{ location }}</label><br>
+                    <label class="card-text">Temperature: {{ temp }}° C</label><br>
+                    <label class="card-text">Weather: {{ weather }}</label><br>
+                    <label class="card-text">Feels Like: {{ feels_like }}° C</label>
+                  </div><div class="col-md-2">
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endblock content %}
+      {% endif %}
+    </div>
+    <div class="col-lg-3 col-md-3 mb-3">
+    </div>
+    <!--Grid column-->
+  </div>
+</section>
+<!--Section: Cards-->
+<!-- End Main Content-->
+</div>
+<!-- Footer -->
+{% include "footer.html" %}
+<!-- End of Footer
