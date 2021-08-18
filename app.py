@@ -3,6 +3,7 @@ import requests
 import configparser
 app = Flask(__name__)
 
+# App Routes Defined over here
 
 @app.route('/')
 def home():
@@ -28,6 +29,7 @@ def weather():
 def contact():
     return render_template('contact.html')
 
+# Function to get the weather regarding the location
 @app.route('/results', methods=['POST'])
 def results():
     zip_code = request.form['zipCode']
@@ -56,6 +58,6 @@ def get_weather_results(zip_code, api_key):
     r = requests.get(api_url)
     return r.json()
 
-
+# App run
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
