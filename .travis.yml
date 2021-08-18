@@ -13,7 +13,6 @@ install:
 script:
   - coverage run -m unittest discover
   - coverage report
-  - coverage run app.py
 
 after_success:
   - codecov
