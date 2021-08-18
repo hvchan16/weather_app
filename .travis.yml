@@ -10,8 +10,8 @@ install:
   - pip install codecov
 
 script:
-  - coverage run -m pytest
   - coverage report
+  - coverage run app.py && coverage html
 
 after_success:
   - codecov
