@@ -1,4 +1,4 @@
-## Table of contents
+## Table of contents [![Build Status](https://www.travis-ci.com/hvchan16/weather_app.svg?branch=master)](https://www.travis-ci.com/hvchan16/weather_app)
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Tools](#tools)
