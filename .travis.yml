@@ -6,6 +6,8 @@ python:
   
 cache: pip
 
+CODECOV_TOKEN='56fe47f1-9385-4454-a841-5d1fb6ecd5af'
+
 install:
   - pip install -r requirements.txt
   - pip install codecov
