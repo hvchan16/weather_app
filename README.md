@@ -18,5 +18,5 @@ Project is created with:
 * [Heroku for Deployment](https://www.heroku.com/)
 
 ## Required URLs
-* [Weatheer Application](https://weather-time-app.herokuapp.com/)
+* [Weather Application](https://weather-time-app.herokuapp.com/)
 * [Source Code](https://github.com/hvchan16/weather_app)
