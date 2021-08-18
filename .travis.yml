@@ -7,10 +7,9 @@ install:
   - pip install coverage
   - pip install -r requirements.txt
   - pip install codecov
-  - pip install pytest
 
 script:
-  - coverage run -m pytest
+  - coverage run -m unittest discover
   - coverage report
 
 after_success:
